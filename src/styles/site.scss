@@ -1,0 +1,17 @@
+// Main style file
+@use 'base/variables' as *;
+
+// Base styles
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/layout';
+
+// Components
+@use 'components/collections';
+@use 'components/account';
+@use 'components/slider';
+@use 'components/buttons';
+
+// Responsive styles
+@use 'responsive/tablet';
+@use 'responsive/mobile';

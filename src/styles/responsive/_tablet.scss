@@ -1,0 +1,107 @@
+@use '../base/variables' as *;
+/* Tablet styles */
+@media (max-width: $tablet-breakpoint) {
+  .container {
+    max-width: 90%;
+  }
+  
+  .collections-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .collections-nav {
+    overflow-x: auto;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    
+    /* Remove the visible scrollbar settings since we're using hidden scrollbars */
+    &-item {
+      white-space: nowrap;
+    }
+  }
+  
+  .slider-navigation {
+    display: none;
+  }
+  
+  .customers-slider {
+    padding: 3rem 0;
+    
+    .slider-header-container {
+      padding: 0 15px;
+    }
+    
+    .slider-header-wrapper {
+      flex-direction: column;
+    }
+    
+    .slider-nav-button {
+      display: none;
+    }
+    
+    .slider-main {
+      padding: 0 15px;
+    }
+  }
+  
+  .slider-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .collections-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .collection-feature {
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      max-width: 100%;
+    }
+  }
+  
+  .swiper {
+    overflow-x: hidden;
+    padding-bottom: 1rem;
+  }
+  
+  .swiper-slide {
+    width: 45% !important;
+    max-width: 320px;
+    height: auto;
+  }
+  
+  .account-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  /* Collections specific styles */
+  .collections-grid {
+    .col-5, .col-7 {
+      min-height: 320px;
+    }
+  }
+  
+  .collection-feature {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 2.8rem;
+    }
+    
+    .description {
+      font-size: 0.8rem;
+      max-width: 95%;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      padding: 0.6rem 2rem;
+    }
+  }
+}

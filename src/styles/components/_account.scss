@@ -1,0 +1,52 @@
+@use '../base/variables' as *;
+/* Account section styles */
+.account-section {
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.account-title {
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.account-subtitle {
+  font-size: 1.25rem;
+  color: rgba(0,0,0,0.7);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.account-icon {
+  margin: 0 auto 2rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-desc {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.6;
+}
+
+.account-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;
+  
+  .btn {
+    min-width: 150px;
+    padding: 0.875rem 1.75rem;
+  }
+}

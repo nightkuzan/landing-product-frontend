@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luxury Furniture Website 🛋️
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-15.3.2-blue)
+![React](https://img.shields.io/badge/React-19.0.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Node](https://img.shields.io/badge/Node-≥22.0.0-green)
 
-First, run the development server:
+A clean, responsive website showcasing luxury furniture products. This project uses Next.js 15 with React 19 and TypeScript for a modern development experience.
+
+## 🚀 Getting Started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+npm install   # or: yarn install
+
+# Start development with live reload (recommended)
+npm run dev:start   # or: yarn dev:start
+
+# Or build assets once then start the dev server
+npm run dev   # or: yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ What's Inside
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 15 with App Router
+- **UI**: React 19 components with TypeScript
+- **Styling**: SCSS with a modular folder structure
+- **Slider**: Swiper.js for interactive carousels
 
-## Learn More
+## 📁 Project Organization
 
-To learn more about Next.js, take a look at the following resources:
+```
+/src
+  /app          # Next.js pages and layout
+  /components   # Reusable UI components
+    /Account    # User account related components
+    /Collections# Product collection components
+    /Slider     # Swiper-based carousel components
+  /hooks        # Custom React hooks
+  /styles       # SCSS files
+    /base       # Reset, variables, typography
+    /components # Component-specific styles
+    /responsive # Mobile and tablet styles
+/public         # Static files and compiled assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧩 Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Responsive Design**: Works great on mobile, tablet and desktop
+- **Modern Look**: Clean design with luxury furniture aesthetic
+- **Interactive Elements**: Product collection tabs and customer favorites slider
+- **Fast Loading**: Optimized with Next.js App Router
 
-## Deploy on Vercel
+## 💻 Development Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Command                | What it does                                                           |
+| ---------------------- | ---------------------------------------------------------------------- |
+| `npm run dev:start`    | Best for development: builds assets and starts server with auto-reload |
+| `npm run dev`          | Builds SCSS assets once then starts the dev server                     |
+| `npm run build`        | Creates a production build                                             |
+| `npm run start`        | Runs the production build                                              |
+| `npm run lint`         | Checks code for errors and style issues                                |
+| `npm run build-assets` | Only builds the SCSS assets                                            |
+| `npm run watch-assets` | Watches and rebuilds SCSS assets when they change                      |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Replace `npm run` with `yarn` if you prefer using Yarn
+
+## 🔄 Import Shortcuts
+
+The project has path aliases set up for cleaner imports:
+
+```typescript
+// Instead of messy relative paths like ../../components/Button
+import { SomeComponent } from "@components/SomeComponent";
+import { useCustomHook } from "@hooks/use-custom-hook";
+```
+
+Available aliases: `@app`, `@components`, `@hooks`, and `@styles`
+
+## 🏗️ SCSS Build Process
+
+This project uses esbuild to process SCSS styles only:
+
+- Your SCSS files → `public/css/site.min.css`
+
+The build config is in these files:
+
+- `esbuild.config.js` - Main build settings for SCSS
+- `esbuild.watch.js` - Watch mode for SCSS during development
+
+> Note: JavaScript is handled by Next.js's built-in bundler, not by esbuild
+
+## 📱 Responsive Design
+
+The site is built mobile-first:
+
+- Base styles are for mobile devices
+- Media queries add styles for larger screens
+- Use the `useIsMobileOrTablet()` hook when you need different components based on screen size
+
+## 📝 Important Notes
+
+- You need **Node.js 22 or newer**
+- SCSS is organized into base, components, and responsive folders
+- Always use the Next.js `Image` component for better performance
+- Follow the ESLint rules for consistent code quality
+
+## 🤔 Need Help?
+
+- For styling questions, check the SCSS files in `src/styles`
+- For component structure, see examples in `src/components`
+- For page structure, see `src/app/page.tsx` and `src/app/layout.tsx`

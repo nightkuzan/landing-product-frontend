@@ -1,0 +1,20 @@
+@use "sass:math";
+
+// Colors
+$primary-color: #333333;
+$secondary-color: #C6A26D;
+$background-color: #ffffff;
+$text-color: #333333;
+$light-gray: #f5f5f5;
+
+// Fonts
+$primary-font: 'Geist', sans-serif;
+$heading-font: 'Geist', sans-serif;
+
+// Breakpoints
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+
+// Container widths
+$container-width: 1200px;
+$container-padding: 20px;

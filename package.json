@@ -3,23 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "npm run build-assets && next dev",
+    "dev:start": "concurrently \"npm run watch-assets\" \"next dev\"",
+    "build": "npm run build-assets && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-assets": "node esbuild.config.js",
+    "watch-assets": "node esbuild.watch.js",
+    "clean-build": "rm -rf .next && npm run build-assets && next build"
   },
   "dependencies": {
+    "esbuild": "^0.25.5",
+    "next": "^15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "sass": "^1.89.0",
+    "swiper": "^11.2.8"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
+    "esbuild-sass-plugin": "^3.3.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
